@@ -1,27 +1,28 @@
-version: '3.8'
+# Documentation - https://docs.docker.com/compose/compose-file/compose-file-v3/
+# COMPOSE  file version
+version: '3.8' #declare services to bulid and dockraize for run
+services: # service name and config
 
-services:
   auth-service:
-    build: ./auth
-    container_name: auth_service
-
-    ports: 
+    build: ./auth  # build - defining a context path for docker file 
+    container_name: auth_service # name the container
+    ports: #Port mapping - Expose ports
       - '8000:8000'
 
   game-service:
-    build: ./game
-    container_name: game_service
-
-    ports: 
+    build: ./game  # build - defining a context path for docker file 
+    container_name: game_service # name the container
+    ports:   #Port mapping - Expose ports 
       - '8001:8001'
 
   website:
-    build: ./ui
-    container_name: react_s ervice
-    ports:
+    build: ./ui  #build - defining a context path for docker file / or app
+    container_name: react_service # name the container
+    ports: #Port mapping - Expose ports 
       - '3000:3000'
-    stdin_open: true
-    tty: true
-    depends_on:
+    stdin_open: true #docker run -i  //  configures service containers to run with an allocated stdin //he command's input stream, which may include input from the keyboard or input from another command
+    tty: true # docker run -t -  configure service container to run with a TTY. //tells Docker to allocate a virtual terminal session within the container
+    
+    depends_on: #Express dependency between services - need them to work 
       - auth-service
       - game-service
