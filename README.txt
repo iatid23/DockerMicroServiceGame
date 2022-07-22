@@ -108,11 +108,14 @@ stage 5 - playing !!! (and checking)
 
 stage 6 - what i learned (new things)
 ################################################
-1.compose file - concept
-2.run django
+1. compose file - concept and sytax
+2. docker file layers and syntax
+2. run django
 3. microservice conept
 4. binding them
 ################################################
+
+##  docker-compose up  - closing running containers
 
 
 thanks!!
