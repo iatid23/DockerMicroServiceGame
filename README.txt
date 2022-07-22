@@ -1,3 +1,8 @@
+## running the app - docker-compose up only 
+
+explain work flow steps:
+------------------------
+
 this assignment has 3 parts :
 1. auth (python api) (microservice) port:8000 - every microservice will need its own container
 2. game (python api) (microservice) port:8001 - every microservice will need its own container
