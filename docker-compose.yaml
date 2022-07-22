@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  auth-service:
+    build: ./auth
+    container_name: auth_service
+
+    ports: 
+      - '8000:8000'
+
+  game-service:
+    build: ./game
+    container_name: game_service
+
+    ports: 
+      - '8001:8001'
+
+  website:
+    build: ./ui
+    container_name: react_s ervice
+    ports:
+      - '3000:3000'
+    stdin_open: true
+    tty: true
+    depends_on:
+      - auth-service
+      - game-service

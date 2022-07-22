@@ -1,0 +1,4 @@
+This is the authentication service.
+
+Its entry point is:
+    python manage.py runserver 0.0.0.0:8000
